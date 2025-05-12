@@ -1,0 +1,23 @@
+services:
+  portal:
+    container_name: postgres_container
+    image: postgres
+    environment:
+      POSTGRES_USER: portaldb
+      POSTGRES_PASSWORD: PASSWORD@2024
+      PGDATA: /data/postgres
+    volumes:
+      - postgres:/data/postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - postgres
+    restart: unless-stopped
+
+networks:
+  postgres:
+    driver: bridge
+
+volumes:
+  postgres:
+
