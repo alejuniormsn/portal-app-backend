@@ -16,14 +16,14 @@ sudo apt-get install postgresql-client -y
 
 # - Script para gerar Dump do bando de dados (Backup via terminal Linux)
 
-PGPASSWORD="PASSWORD@2024" pg_dump -U portaldbett -h 192.168.0.26 -p 5432 portaldbett > /home/dev/workspace/db-ett-portal/$(date +%Y%m%d-%H%M%S)-portaldbett.sql
+PGPASSWORD="PASSWORD@2024" pg_dump -U portaldb -h 192.168.0.26 -p 5432 portaldb > /home/dev/workspace/db-portal/$(date +%Y%m%d-%H%M%S)-portaldb.sql
 
 # - Aplicação servida pelo PM2:
 
     https://pm2.keymetrics.io/docs/usage/quick-start/
 
 - Comando via terminal Linux do server de backend:
-  Server start: pm2 start build/server.js -i 3 --name ETT-Backend
+  Server start: pm2 start build/server.js -i 3 --name Backend
   Server stop: pm2 stop all
   Server status: pm2 list
   Server restart: pm2 restart all
