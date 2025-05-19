@@ -3,9 +3,9 @@ import { Dialect } from "sequelize";
 const dbConfig = {
   dialect: "postgres" as Dialect,
   host: "192.168.0.26",
-  username: "portaldbett",
-  password: "Ett@2024",
-  database: "portaldbett",
+  username: "portaldb",
+  password: "SECRET",
+  database: "portaldb",
   logging: false,
   define: {
     timestamps: false,
